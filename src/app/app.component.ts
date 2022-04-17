@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-ci';
+  description = 'This is a sample Angular application to test CI/CD.'
 }
