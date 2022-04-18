@@ -22,10 +22,23 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-ci');
   });
 
+  it(`should have as description 'This is a sample Angular application to test CI/CD.'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.description).toEqual('This is a sample Angular application to test CI/CD.');
+  });
+
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-ci app is running!');
+    expect(compiled.querySelector('h1.sample')?.textContent).toContain('angular-ci');
+  });
+
+  it('should render description', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('p.para')?.textContent).toContain('This is a sample Angular application to test CI/CD.');
   });
 });
